@@ -158,6 +158,10 @@
         .controller('StatisticsCtrl')
         .build())
 
+      .state('statisticsCSV', new State(USER_ROLES, 'statisticsCSV', 'js/statistics/statisticsCSV.html')
+        .controller('StatisticsCtrl')
+        .build())
+
       .state('admarticle', new State(USER_ROLES, 'admarticle/:id', 'js/admin/article/article.html')
         .controller('AdminArticleCtrl')
         .resolve({account: getAccount})

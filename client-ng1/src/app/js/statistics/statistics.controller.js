@@ -8,6 +8,23 @@
     var ctrl = this;
     ctrl.stats = {};
 
+
+    ctrl.getVote = function (voter, proposalId) {
+      var result = undefined;
+      ctrl.stats.proposals.forEach(function (elt) {
+        if (elt.votes && elt.votes.length > 0) {
+
+          elt.votes.forEach(function (vote) {
+            if (vote.proposalId === proposalId && vote.voter === voter) {
+              console.log('found for session '+proposalId,vote.voteValue);
+              result = vote.voteValue;
+            }
+          });
+        }
+      });
+      return result;
+    };
+
     //Recuperate count of submitted session
     $q.all([
       $http.get('/app/cfp/vote/nbsessions/SUBMITTED')

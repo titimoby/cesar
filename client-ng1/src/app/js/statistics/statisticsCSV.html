@@ -1,0 +1,27 @@
+
+id,format,title,category,lang,level,typesession,maxattendees,guest,Cédric,Agnès,Romain,Cyril,Alfred,Philippe,Alexis,Mathieu,Guillaume,Sébastien,Grégory
+<br>
+
+<span ng-repeat="session in ctrl.stats.proposals  | orderBy:'-totalVotes'">
+    {{session.id}},
+    {{session.format}},
+    {{session.title}},
+    {{session.category}},
+    {{session.lang}},
+    {{session.level}},
+    {{session.typesession}},
+    {{session.maxattendees}},
+    {{session.guest}},
+    {{ctrl.getVote('Cédric', session.id)}},
+    {{ctrl.getVote('Agnès', session.id)}},
+    {{ctrl.getVote('Romain', session.id)}},
+    {{ctrl.getVote('Cyril', session.id)}},
+    {{ctrl.getVote('Alfred', session.id)}},
+    {{ctrl.getVote('Philippe', session.id)}},
+    {{ctrl.getVote('Alexis', session.id)}},
+    {{ctrl.getVote('Mathieu', session.id)}},
+    {{ctrl.getVote('Guillaume', session.id)}},
+    {{ctrl.getVote('Sébastien', session.id)}},
+    {{ctrl.getVote('Grégory', session.id)}}
+<br>
+</span>
